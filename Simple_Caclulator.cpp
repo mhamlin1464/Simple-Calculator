@@ -22,6 +22,7 @@ int Simple_Calculator(int num1, int num2, string op){
 
 int main(){
     cout << setw(20) << "Simple Calculator" << endl;
+    cout << setw(20) << "-----------------------" << endl;
     cout << left<<  "Please pick an operation: add/subtract/divide/multi" << endl;
     string op;
     cin >> op;
