@@ -26,6 +26,13 @@ int Simple_Calculator(int num1, int num2, string op){
   
 }
 
+string String_Up(string word){
+    for (size_t i = 0; i < word.length(); i++){
+        word[i] = toupper(word[i]);
+    }
+    return word;
+}
+
 int main(){
     cout << setw(20) << "Simple Calculator" << endl;
     cout << setw(20) << "-----------------------" << endl;
@@ -34,19 +41,12 @@ int main(){
         cout << setw(20) << "\nWould you like to continue with an operation: Y/N"<< endl;
         string question;
         cin >> question;
-        //This converts input to lowercase
-        //size t is used to adjust for the size of the data 
-        for (size_t i = 0; i < question.length(); i++){
-            question[i] = toupper(question[i]);
-        }
+        question = String_Up(question);
         if (question == "Y"){
             cout << left<<  "Please pick an operation: add/subtract/divide/multi" << endl;
             string op;
             cin >> op;
-            //Manuall convert operation iput to lowercase
-            for (size_t i =0; i < op.length(); i++){
-                op[i] = toupper(op[i]);
-            }
+            op = String_Up(op);
             cout << left << "What is your first number: ";
             int num1;
             cin >> num1;
